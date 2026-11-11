@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#f6f7f3">
+<title>Mis palabras en inglés · Unidad 2</title>
+<style>
+:root{color-scheme:light;--bg:#f6f7f3;--paper:#fff;--ink:#2d3b3a;--muted:#5f706e;--edge:#dbe3de;--accent:#dcece6;--accent-deep:#235d54;--focus:#986c30;--icon-bg:#edf4f0}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}main{max-width:920px;margin:auto;padding:28px 18px 60px}header{text-align:center;margin-bottom:27px}.eyebrow{font-size:.88rem;color:var(--muted);font-weight:650;letter-spacing:.05em}h1{font-size:clamp(1.7rem,4vw,2.35rem);margin:7px 0}header p{margin:0;color:var(--muted)}.nav{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin:24px 0 30px}button{font:inherit;cursor:pointer;touch-action:manipulation}button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}.tab{border:1px solid var(--edge);border-radius:12px;padding:11px 19px;background:var(--paper);color:var(--ink);font-weight:650}.tab[aria-selected="true"]{background:var(--accent);border-color:#a2c8b9;color:var(--accent-deep)}.view[hidden]{display:none}h2{font-size:1.2rem;margin:0 0 6px}.hint{color:var(--muted);margin:0 0 19px}.section{margin-top:26px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.word{min-height:165px;border:1px solid var(--edge);background:var(--paper);border-radius:16px;text-align:left;padding:17px 16px;display:flex;flex-direction:column;justify-content:space-between;transition:background .12s,border-color .12s}.word:hover{background:#f0f6f2;border-color:#b9d2c8}.word:active{background:var(--accent)}.icon-wrap{display:flex;justify-content:center;margin-bottom:8px}.icon{width:62px;height:62px;border-radius:18px;background:var(--icon-bg);display:flex;align-items:center;justify-content:center;font-size:2rem;border:1px solid #dde8e2}.en{font-size:1.42rem;font-weight:750;line-height:1.2;text-align:center}.es{font-size:.97rem;color:var(--muted);text-align:center;margin-top:5px}.speaker{float:right;color:var(--accent-deep);font-size:1.06rem}.phrases{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.phrase{background:var(--paper);border:1px solid var(--edge);border-radius:14px;padding:15px 16px;text-align:left;min-height:86px}.phrase strong,.phrase span{display:block}.phrase span{font-size:.91rem;color:var(--muted);margin-top:4px}.panel{background:var(--paper);border:1px solid var(--edge);border-radius:20px;padding:clamp(20px,5vw,36px);max-width:620px;margin:10px auto}.center{text-align:center}.instruction{color:var(--muted);margin:0 0 12px}.listen{border:none;background:var(--accent);color:var(--accent-deep);border-radius:16px;padding:17px 25px;font-size:1.15rem;font-weight:750;margin:8px auto 20px;display:inline-flex;gap:10px;align-items:center}.answers{display:grid;gap:10px;grid-template-columns:repeat(3,minmax(0,1fr))}.answer{padding:14px 8px;border:1px solid var(--edge);border-radius:13px;background:#fff;font-size:1.08rem;font-weight:700;min-height:82px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px}.answer:hover{background:#f2f7f4}.answer[disabled]{cursor:default}.mini-icon{font-size:1.45rem;line-height:1}.answer.correct{background:#e4f1e9;border-color:#79ae94;color:#20533f}.answer.incorrect{background:#f8efe5;border-color:#dec49d}.feedback{min-height:62px;margin:14px 0 4px;font-weight:600}.feedback small{display:block;font-weight:400;color:var(--muted)}.next{border:0;background:var(--accent-deep);color:white;padding:12px 26px;border-radius:12px;font-weight:700}.next[hidden]{display:none}.progress{color:var(--muted);font-size:.9rem;margin-top:16px}.footnote{text-align:center;font-size:.85rem;color:var(--muted);margin-top:31px}@media(max-width:650px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.phrases{grid-template-columns:1fr}.answers{grid-template-columns:1fr}.answer{min-height:58px}.word{min-height:150px}}@media(max-width:340px){.grid{grid-template-columns:1fr}}@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+<main>
+<header><div class="eyebrow">INGLÉS · UNIDAD 2</div><h1>Mis palabras en inglés</h1><p>Escucho, aprendo y juego a mi ritmo.</p></header>
+<nav class="nav" aria-label="Elegir actividad"><button class="tab" id="tab-words" role="tab" aria-selected="true" aria-controls="words">📖 Mis palabras</button><button class="tab" id="tab-game" role="tab" aria-selected="false" aria-controls="game">🎧 Juego de escuchar</button></nav>
+<section class="view" id="words" role="tabpanel" aria-labelledby="tab-words">
+<h2>Mi familia</h2><p class="hint">Toca una tarjeta para escuchar la palabra en inglés.</p><div class="grid" id="family"></div>
+<div class="section"><h2>¿Cómo somos?</h2><p class="hint">Pulsa cualquier palabra para oírla.</p><div class="grid" id="descriptions"></div></div>
+<div class="section"><h2>Frases para practicar</h2><p class="hint">Escucha las frases completas.</p><div class="phrases" id="phrases"></div></div>
+</section>
+<section class="view" id="game" role="tabpanel" aria-labelledby="tab-game" hidden>
+<div class="panel center"><h2>¿Qué palabra escuchas?</h2><p class="instruction">Pulsa el altavoz y elige la palabra que has oído.</p><button id="listen" class="listen" type="button">🔊 Escuchar palabra</button><div class="answers" id="answers"></div><div class="feedback" id="feedback" aria-live="polite"></div><button id="next" class="next" type="button" hidden>Siguiente palabra →</button><div class="progress" id="progress"></div></div>
+</section>
+<p class="footnote" id="voice-note">El sonido utiliza la voz inglesa del navegador. Funciona sin conexión si el dispositivo dispone de una voz en inglés.</p>
+</main>
+<script>
+'use strict';
+const family=[['Mum','mamá'],['Dad','papá'],['Brother','hermano'],['Sister','hermana'],['Grandpa','abuelo'],['Grandma','abuela'],['Uncle','tío'],['Aunt','tía']];
+const descriptions=[['Old','mayor / anciano'],['Young','joven'],['Tall','alto / alta'],['Short','bajo / baja']];
+const grammar=[['This is my mum.','Esta es mi mamá.'],['This is my dad.','Este es mi papá.'],['Is this your brother?','¿Es este tu hermano?'],['Yes, it is.','Sí, lo es.'],["No, it isn't.",'No, no lo es.']];
+const all=[...family,...descriptions];
+const icons={
+  Mum:'👩',Dad:'👨',Brother:'👦',Sister:'👧',Grandpa:'👴',Grandma:'👵',Uncle:'🧔',Aunt:'👩',
+  Old:'👴',Young:'🧒',Tall:'⬆️',Short:'⬇️'
+};
+const $=id=>document.getElementById(id);
+function speak(text){
+  if(!('speechSynthesis' in window)){ $('voice-note').textContent='Este navegador no dispone de lectura en voz alta. Prueba Chrome, Edge o Safari.';return; }
+  const synth=window.speechSynthesis;synth.cancel();const utterance=new SpeechSynthesisUtterance(text);utterance.lang='en-GB';utterance.rate=.82;utterance.pitch=1;utterance.volume=1;
+  const voices=synth.getVoices();const english=voices.filter(v=>/^en(-|_)/i.test(v.lang));
+  utterance.voice=english.find(v=>/^en[-_]GB$/i.test(v.lang))||english[0]||null;
+  synth.speak(utterance);
+}
+function makeWords(items,target){items.forEach(([en,es])=>{const b=document.createElement('button');b.className='word';b.type='button';b.setAttribute('aria-label',`${en}. Escuchar pronunciación.`);b.innerHTML=`<div class="icon-wrap"><div class="icon" aria-hidden="true"></div></div><span class="en"></span><span class="es"></span>`;b.querySelector('.icon').textContent=icons[en]||'⭐';b.querySelector('.en').textContent=en;b.querySelector('.es').textContent=es;b.addEventListener('click',()=>speak(en));target.append(b);});}
+makeWords(family,$('family'));makeWords(descriptions,$('descriptions'));
+grammar.forEach(([en,es])=>{const b=document.createElement('button');b.className='phrase';b.type='button';const strong=document.createElement('strong');strong.textContent='🔊 '+en;const span=document.createElement('span');span.textContent=es;b.append(strong,span);b.addEventListener('click',()=>speak(en));$('phrases').append(b);});
+function show(view){window.speechSynthesis?.cancel();const game=view==='game';$('words').hidden=game;$('game').hidden=!game;$('tab-words').setAttribute('aria-selected',String(!game));$('tab-game').setAttribute('aria-selected',String(game));if(game&&!current)nextQuestion();}
+$('tab-words').addEventListener('click',()=>show('words'));$('tab-game').addEventListener('click',()=>show('game'));
+let queue=[],current=null,question=0,answered=false;
+function shuffle(values){const a=[...values];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
+function nextQuestion(){if(!queue.length)queue=shuffle(all);current=queue.pop();question++;answered=false;$('feedback').textContent='';$('next').hidden=true;$('answers').replaceChildren();const wrong=shuffle(all.filter(x=>x[0]!==current[0])).slice(0,2);shuffle([current,...wrong]).forEach(([en])=>{const b=document.createElement('button');b.type='button';b.className='answer';b.innerHTML=`<span class="mini-icon" aria-hidden="true">${icons[en]||'⭐'}</span><span>${en}</span>`;b.addEventListener('click',()=>choose(en,b));$('answers').append(b);});$('progress').textContent='Palabra '+question+' · Puedes repetir el sonido tantas veces como quieras.';}
+function choose(en,button){if(answered)return;if(en===current[0]){answered=true;button.classList.add('correct');$('feedback').textContent='¡Muy bien! '+current[0]+' significa '+current[1]+'.';[...$('answers').children].forEach(b=>b.disabled=true);$('next').hidden=false;speak(current[0]);}else{button.classList.add('incorrect');button.disabled=true;$('feedback').textContent='Prueba otra vez. Escucha la palabra de nuevo.';}}
+$('listen').addEventListener('click',()=>{if(current)speak(current[0]);});$('next').addEventListener('click',nextQuestion);
+</script>
+</body>
+</html>
